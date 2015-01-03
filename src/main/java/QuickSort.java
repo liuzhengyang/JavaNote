@@ -14,30 +14,26 @@ public class QuickSort {
 
         int temp = array[startInclude];
         while(i<j){
-            for(k = j; k > i; k--){
-                if(array[k] < temp){
-                    array[i] = array[k];
+            while(i<j){
+                if(array[j] < temp){
+                    array[i] = array[j];
                     i++;
-                    j = k;
                     break;
                 }
+                j--;
             }
-            if(i == k)break;
-            for(k = i; k < j; k++){
-                if(array[k] > temp){
-                    array[j] = array[k];
-                    i = k;
+            if(i == j)break;
+            while(i< j){
+                if(array[i] > temp){
+                    array[j] = array[i];
                     j--;
                     break;
                 }
+                i++;
             }
-            if(j == k)break;
+            if(j == i)break;
         }
-//        System.out.println(i);
-//        System.out.println(j);
         array[i] = temp;
-//        Arrays.asList(array).forEach(System.out::println);
-
 
         // recursive
         if(i > startInclude){
