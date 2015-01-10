@@ -9,7 +9,7 @@ import java.util.Random;
  */
 public class QuickSortTest {
 
-    private static  int[] arr = new int[100000];
+    private static  int[] arr = new int[1000];
 
     QuickSort quickSort = new QuickSort();
     BuddleSort buddleSort = new BuddleSort();
@@ -18,7 +18,7 @@ public class QuickSortTest {
     @Before
     public void prepareArray(){
         System.out.println("--------------------------------------------");
-        Arrays.parallelSetAll(arr, x -> new Random().nextInt(50000));
+        Arrays.parallelSetAll(arr, x -> new Random().nextInt(500));
         for(int x : arr){
             System.out.println(x);
         }
