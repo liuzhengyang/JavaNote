@@ -4,6 +4,7 @@ import org.junit.Test;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Iterator;
 import java.util.List;
 
 /**
@@ -45,5 +46,26 @@ public class ListTest {
         log.info(strList);
         log.info(subList);
 
+    }
+
+
+    @Test
+    public void testIterator(){
+        List<Integer> list = new ArrayList<Integer>();
+        list.add(1);
+        list.add(2);
+        list.add(1);
+        list.add(1);
+        list.add(1);
+        list.add(1);
+
+        Iterator<Integer> iterator = list.iterator();
+
+        while(iterator.hasNext()){
+            iterator.next();
+            iterator.remove();
+        }
+
+        System.out.println(list);
     }
 }
